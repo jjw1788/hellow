@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3时钟</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .kedu{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        .kedu div{
+            height: 300px;
+            position: absolute;
+            left: 50%;
+        }
+        .kedu div:nth-child(1){
+            width: 6px;
+            background: #333;
+            margin-left: -3px;
+        }
+        .kedu div:nth-child(2){
+            width: 2px;
+            background: #666;
+            margin-left: -3px;
+            transform: rotate(30deg);
+        }
+        .kedu div:nth-child(3){
+            width: 2px;
+            background: #666;
+            margin-left: -3px;
+            transform: rotate(60deg);
+        }
+        .kedu div:nth-child(4){
+            width: 6px;
+            background: #333;
+            margin-left: -3px;
+            transform: rotate(90deg);
+        }
+        .kedu div:nth-child(5){
+            width: 2px;
+            background: #666;
+            margin-left: -3px;
+            transform: rotate(120deg);
+        }
+        .kedu div:nth-child(6){
+            width: 2px;
+            background: #666;
+            margin-left: -3px;
+            transform: rotate(150deg);
+        }
+        .disc{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            z-index: 2;
+        }
+        .middisc{
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -130px;
+            margin-top: -130px;
+        }
+        .hour{
+            width: 6px;
+            height: 60px;
+            background: #000;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            margin-left: -3px;
+            transform-origin: bottom center;
+            animation: move 43200s steps(60) 0s infinite;
+        }
+        .minu{
+            width: 4px;
+            height: 80px;
+            background: green;
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            margin-left: -2px;
+            transform-origin: bottom center;
+            animation: move 3600s steps(60) 0s infinite;
+        }
+        .second{
+            width: 2px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            margin-left: -1px;
+            transform-origin: bottom center;
+            -webkit-animation: move 60s steps(60) infinite;
+        }
+        .cover{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+        }
+        @keyframes move{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="kedu">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="disc">
+        <div class="hour"></div>
+        <div class="minu"></div>
+        <div class="second"></div>
+        <div class="cover"></div>
+    </div>
+    <div class="middisc">
+    </div>
+</div>
+</body>
+</html>
